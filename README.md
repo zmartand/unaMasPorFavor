@@ -20,7 +20,8 @@ return bisect (min,med);
 } else {
 return bisect (med,max);
 }
-}
+}  
+
 a) ¿Qué calcula la llamada a la función recursiva bisect(0,N)? Si cambiamos el
 valor de N, ¿qué estaríamos calculando? ¿Y si cambiásemos la función f(x)?
 #### Respuesta:  
@@ -45,7 +46,8 @@ b) Implemente un algoritmo iterativo equivalente.
     return med;
 } 
 ```
-```En java: 
+En java: 
+```
 public class BiseccionIterativo{
     private static final double N = 2;
     private static final double PREC = 1e-6;
