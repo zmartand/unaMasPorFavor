@@ -42,7 +42,8 @@ b) Implemente un algoritmo iterativo equivalente.
         med = (min+max)/2;
     }
     return med;
-} ```
+} 
+```
 
 ### Ejercicio 2.  
 Dado el siguiente algoritmo recursivo:
