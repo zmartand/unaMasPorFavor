@@ -3,7 +3,8 @@
 Mi repositorio es: https://github.com/zmartand/unaMasPorFavor.git
 ## Enunciados:
 ### Ejercicio 1.  
-Dado el siguiente fragmento de código C:
+Dado el siguiente fragmento de código C:  
+
 static final double N = 2;
 static final double PREC = 1e-6;
 static double f (double x)
@@ -190,11 +191,13 @@ la siguiente correspondencia:
 Resto 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
 Dígito 0 1 2 3 4 5 6 7 8 9 A B C D E F
 Por ejemplo:
-65029|10 = FE05|16
+65029|10 = FE05|16  
+
 ### Ejercicio 4.  
 Implemente, tanto de forma recursiva como de forma iterativa, una función que nos diga
 si una cadena de caracteres es simétrica (un palíndromo). Por ejemplo,
-“DABALEARROZALAZORRAELABAD” es un palíndromo.
+“DABALEARROZALAZORRAELABAD” es un palíndromo.  
+
 ### Ejercicio 5.  
 Implemente, tanto de forma recursiva como de forma iterativa y con expresiones lambda,
 una función que nos devuelva el máximo común divisor de dos números enteros
