@@ -31,7 +31,7 @@ f(x) = 0 en el intervalo (0, N).
 
 b) Implemente un algoritmo iterativo equivalente.
 
-`static double bisect_iter (double min, double max) {
+```static double bisect_iter (double min, double max) {
     double med = (min+max)/2;
     while (max-min >= PREC) {
         if (f(min)*f(med) < 0) {
@@ -42,7 +42,7 @@ b) Implemente un algoritmo iterativo equivalente.
         med = (min+max)/2;
     }
     return med;
-}`
+}```
 
 ### Ejercicio 2.  
 Dado el siguiente algoritmo recursivo:
