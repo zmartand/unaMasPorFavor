@@ -1,12 +1,13 @@
 # unaMasPorFavor
 ## Nota:
-Mi repositorio es:
+Mi repositorio es: https://github.com/zmartand/unaMasPorFavor.git
 ## Enunciados:
 ### Ejercicio 1.  
 Dado el siguiente fragmento de código C:
 
 a) ¿Qué calcula la llamada a la función recursiva bisect(0,N)? Si cambiamos el
 valor de N, ¿qué estaríamos calculando? ¿Y si cambiásemos la función f(x)?
+#### Respuesta:
 
 b) Implemente un algoritmo iterativo equivalente.
 
