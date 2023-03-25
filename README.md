@@ -30,6 +30,7 @@ se calculará la raíz cuadrada de ese nuevo número. Si se cambia la función f
 f(x) = 0 en el intervalo (0, N).
 
 b) Implemente un algoritmo iterativo equivalente.
+#### Respuesta:  
 
 ```static double bisect_iter (double min, double max) {
     double med = (min+max)/2;
@@ -44,6 +45,35 @@ b) Implemente un algoritmo iterativo equivalente.
     return med;
 } 
 ```
+```En java: 
+public class BiseccionIterativo{
+    private static final double N = 2;
+    private static final double PREC = 1e-6;
+
+    private static double f(double x) {
+        return x * x - N;
+    }
+
+    public static double bisecIter(double min, double max) {
+        double med = (min + max) / 2;
+        while (max - min >= PREC) {
+            if (f(min) * f(med) < 0) {
+                max = med;
+            } else {
+                min = med;
+            }
+            med = (min + max) / 2;
+        }
+        return med;
+    }
+
+    public static void main(String[] args) {
+        double root = bisectIter(0, N);
+        System.out.println("The square root of " + N + " is approximately " + root);
+    }
+}
+```
+
 
 ### Ejercicio 2.  
 Dado el siguiente algoritmo recursivo:
