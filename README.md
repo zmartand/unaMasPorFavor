@@ -32,7 +32,7 @@ f(x) = 0 en el intervalo (0, N).
 
 b) Implemente un algoritmo iterativo equivalente.
 #### Respuesta:  
-
+En c:
 ```static double bisect_iter (double min, double max) {
     double med = (min+max)/2;
     while (max-min >= PREC) {
@@ -78,12 +78,78 @@ public class BiseccionIterativo{
 
 
 ### Ejercicio 2.  
-Dado el siguiente algoritmo recursivo:
+Dado el siguiente algoritmo recursivo:  
+void f(int num, int div)
+{
+if (num>1) {
+if ((num%div) == 0) {
+System.out.println(div);
+f(num/div,div);
+} else {
+f(num,div+1);
+}
+}
+}
 a) Dado un número cualquiera x, ¿qué nos muestra por pantalla la llamada a la función
 recursiva f(x,2)? ¿Cuál sería un nombre más adecuado para la función f?
 
+La llamada a la función recursiva f(x, 2) mostrará por pantalla los factores primos de x. La función f toma dos argumentos, 
+num y div. num representa el número del cual se buscan los factores primos, y div es el divisor actual que se está probando.
+En cada llamada recursiva, la función comprueba si div es un factor de num (es decir, si num es divisible por div). Si lo es, 
+muestra div en la pantalla y llama a la función recursivamente con num dividido por div y div sin cambiar. Si div no es un factor 
+de num, llama a la función recursivamente con div aumentado en 1.
+Por lo tanto, la llamada f(x, 2) mostrará todos los factores primos de x, uno por línea.
+Un nombre más adecuado para la función f podría ser imprimirFactoresPrimos o simplemente factoresPrimos, 
+ya que su objetivo es encontrar y mostrar los factores primos de un número.
+
+
 b) Implemente un algoritmo iterativo y uno implementado mediante expresiones lambda
 equivalentes.
+Aquí se presentan dos implementaciones equivalentes de la función factoresPrimos, una iterativa y otra utilizando expresiones lambda en Java:  
+
+``` public class FactoresPrimos {
+    public static void factoresPrimosIter(int num) {
+        int div = 2;
+        while (num > 1) {
+            if (num % div == 0) {
+                System.out.println(div);
+                num /= div;
+            } else {
+                div++;
+            }
+        }
+    }
+
+    public static void factoresPrimosLambda(int num) {
+        IntConsumer imprimir = x -> System.out.println(x);
+        IntBinaryOperator dividir = (x, y) -> x / y;
+
+        IntUnaryOperator funcion = n -> {
+            int div = 2;
+            while (n > 1) {
+                if (n % div == 0) {
+                    imprimir.accept(div);
+                    n = dividir.applyAsInt(n, div);
+                } else {
+                    div++;
+                }
+            }
+            return n;
+        };
+
+        funcion.applyAsInt(num);
+    }
+
+    public static void main(String[] args) {
+        int x = 60;
+        System.out.println("Factores primos de " + x + " usando iteración:");
+        factoresPrimosIter(x);
+
+        System.out.println("Factores primos de " + x + " usando lambda:");
+        factoresPrimosLambda(x);
+    }
+}
+```
 
 ### Ejercicio 3.  
 Construya una función que convierta un número decimal en una cadena que represente el
