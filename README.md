@@ -4,12 +4,45 @@ Mi repositorio es: https://github.com/zmartand/unaMasPorFavor.git
 ## Enunciados:
 ### Ejercicio 1.  
 Dado el siguiente fragmento de código C:
-
+static final double N = 2;
+static final double PREC = 1e-6;
+static double f (double x)
+{
+return x*x-N;
+}
+static double bisect (double min, double max)
+{
+double med = (min+max)/2;
+if (max-min<PREC) {
+return med;
+} else if (f(min)*f(med)<0) {
+return bisect (min,med);
+} else {
+return bisect (med,max);
+}
+}
 a) ¿Qué calcula la llamada a la función recursiva bisect(0,N)? Si cambiamos el
 valor de N, ¿qué estaríamos calculando? ¿Y si cambiásemos la función f(x)?
-#### Respuesta:
+#### Respuesta:  
+La llamada a la función recursiva bisect(0,N) calcula la raíz cuadrada de 2 utilizando el método de bisección. 
+El valor de N representa el número para el que se desea calcular la raíz cuadrada. Si se cambia el valor de N, 
+se calculará la raíz cuadrada de ese nuevo número. Si se cambia la función f(x), se calculará la raíz de la ecuación 
+f(x) = 0 en el intervalo (0, N).
 
 b) Implemente un algoritmo iterativo equivalente.
+
+`static double bisect_iter (double min, double max) {
+    double med = (min+max)/2;
+    while (max-min >= PREC) {
+        if (f(min)*f(med) < 0) {
+            max = med;
+        } else {
+            min = med;
+        }
+        med = (min+max)/2;
+    }
+    return med;
+}´
 
 ### Ejercicio 2.  
 Dado el siguiente algoritmo recursivo:
